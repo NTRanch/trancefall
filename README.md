@@ -16,5 +16,36 @@ this repo's bloch roadmap is [`.ai/roadmap.md`](.ai/roadmap.md).
   (book chapter: Quality Bar).
 - **Audio:** nothing is ever played aloud by an agent; the Owner presses play.
 
-Status: scaffold (planning + baseline config). The jam clock for this entry
-starts on the Owner's word for week 1.
+## Play
+
+Open [`web/index.html`](web/index.html) in a browser — it runs fully
+offline. She breathes in, she holds, and on the exhale she counts: tap
+(click or SPACE) on each count beat to walk her deeper. Her face moves
+through the F-code states as the room's weather deepens with her.
+
+- **Level 1 — First Descent:** learn the count (4 beats, target 60%).
+- **Level 2 — Down Easy:** the full descent (5 beats, target 85%),
+  culmination on the counted exhale.
+- **Level 3 — Trandeep:** faster counts, heavier weather (6 beats,
+  target 97%).
+
+Settings (weather density, text size) and your best depth per level
+persist in the browser. Settings are reachable before any play.
+
+## Preview videos (rendered from the shipped core, demo mode)
+
+- [Level 1 — First Descent](docs/previews/level-1-trancefall.mp4)
+- [Level 2 — Down Easy](docs/previews/level-2-trancefall.mp4)
+- [Level 3 — Trandeep](docs/previews/level-3-trancefall.mp4)
+
+## Build & verify
+
+```sh
+just build   # zig build + assemble web/index.html
+just check   # fmt, 12 core tests, settings bridge, perf budget, playtest
+just previews
+```
+
+Status: **v1.0.0** (2026-10-30) — playable, gated, tagged. The seahawk
+playtest pass on primo and the live itch.io entry checks (GJ-07) remain
+scheduled follow-ups; both are recorded in `docs/BREAKAGE-LOG.md`.
