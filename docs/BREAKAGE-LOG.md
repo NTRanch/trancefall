@@ -33,3 +33,14 @@ bloch at the week's close (the log is the input, bloch is the record).
   depth/completion. R-202/R-203 are gated on that bridge
   (`tools/settings-check.mjs`), and the scoping is recorded here rather
   than silently narrowing the items.
+- **B-6: menu/end-screen text clipped in the raster (post-tag fix).**
+  An estate-wide raster-advance audit (run during the Exposure build)
+  measured every screen's text against the preview rasteriser's font
+  advance (unit = round(size/14); the advance doubles at size >= 21):
+  the title subtitle and level line, the how-to lines, both end
+  titles, and the play HUD clock all ran past the right edge in the
+  rendered surface. The browser's real font fits them; the preview
+  videos are the deliverable that clips. Fix: those lines set at
+  size 20 (end titles 40), audit now CLEAN on all screens, previews
+  re-captured. Landed as a fix commit on top of v1.0.0 before any
+  push; the tag moves with it.

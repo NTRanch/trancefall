@@ -808,7 +808,7 @@ pub const Renderer = struct {
     fn render_title(g: *const Game, w: *DrawWriter) void {
         render_weather(g, w, true);
         w.text(290, 130, text_size(g, 72), Palette.pink, "TRANCEFALL");
-        w.text(300, 220, text_size(g, 24), Palette.dim, "PRIMA - THE FACE IS THE WEATHER");
+        w.text(300, 220, text_size(g, 20), Palette.dim, "PRIMA - THE FACE IS THE WEATHER");
         const items = [_][]const u8{ "START", "HOW TO PLAY", "SETTINGS" };
         for (items, 0..) |label, i| {
             const y: i32 = 400 + @as(i32, @intCast(i)) * 80;
@@ -821,7 +821,7 @@ pub const Renderer = struct {
         var buf: [64]u8 = undefined;
         const s = std.fmt.bufPrint(&buf, "LEVEL: {s}", .{lvl.name}) catch "LEVEL";
         if (g.menu_cursor == 3) w.text(240, 660, text_size(g, 26), Palette.pink, ">");
-        w.text(290, 660, text_size(g, 26), if (g.menu_cursor == 3) Palette.pink else Palette.gold, s);
+        w.text(290, 660, text_size(g, 20), if (g.menu_cursor == 3) Palette.pink else Palette.gold, s);
         w.text(290, 710, text_size(g, 20), Palette.dim, "UP/DOWN CHOOSES - CONFIRM STARTS");
         render_glyph(g, w, 480, 830, revelation_completeness(g.depth));
     }
@@ -841,7 +841,7 @@ pub const Renderer = struct {
             "THE DESCENT BEFORE TIME RUNS OUT.",
         };
         for (lines, 0..) |ln, i| {
-            w.text(180, 240 + @as(i32, @intCast(i)) * 52, text_size(g, 26), Palette.paper, ln);
+            w.text(180, 240 + @as(i32, @intCast(i)) * 52, text_size(g, 20), Palette.paper, ln);
         }
         if ((g.frame / 30) % 2 == 0) w.text(300, 830, text_size(g, 24), Palette.dim, "CONFIRM TO RETURN");
     }
@@ -878,10 +878,10 @@ pub const Renderer = struct {
     fn render_end(g: *const Game, w: *DrawWriter, won: bool) void {
         render_weather(g, w, false);
         if (won) {
-            w.text(270, 300, text_size(g, 56), Palette.pink, "SHE SURFACES SLOWLY");
+            w.text(240, 300, text_size(g, 40), Palette.pink, "SHE SURFACES SLOWLY");
             w.text(330, 400, text_size(g, 30), Palette.paper, "DESCENT COMPLETE");
         } else {
-            w.text(300, 300, text_size(g, 56), Palette.mauve, "THE TRANCE BREAKS");
+            w.text(270, 300, text_size(g, 40), Palette.mauve, "THE TRANCE BREAKS");
             w.text(320, 400, text_size(g, 30), Palette.paper, "TIME RAN OUT");
         }
         var buf: [64]u8 = undefined;
@@ -1064,7 +1064,7 @@ pub const Renderer = struct {
         // Time left
         const remain = lvl.time_limit_ms -| g.elapsed_ms;
         const ts = std.fmt.bufPrint(&buf, "TIME {d}:{d:0>2}", .{ remain / 60000, (remain / 1000) % 60 }) catch "";
-        w.text(790, 36, text_size(g, 22), Palette.dim, ts);
+        w.text(790, 36, text_size(g, 20), Palette.dim, ts);
         if (g.culminating_ms > 0) {
             w.text(330, 190, text_size(g, 34), Palette.gold, "ON THE COUNTED EXHALE");
         }
