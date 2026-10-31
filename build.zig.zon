@@ -1,0 +1,8 @@
+// Trancefall — package manifest (Zig 0.15.x).
+.{
+    .name = .trancefall,
+    .version = "0.1.0",
+    .fingerprint = 0x0000000000000000, // preflight: replace on first `zig build`
+    .minimum_zig_version = "0.15.1",
+    .paths = .{ "build.zig", "build.zig.zon", "src" },
+}
