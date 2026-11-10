@@ -1,3 +1,5 @@
+> **Game page:** the full storefront page for this game lives at [docs/GAME-PAGE.md](docs/GAME-PAGE.md).
+
 # Trancefall
 
 **Nice Thoughts Ranch** · Torogao Jam Program week 1 (Wave A — Animation) · Prima · **Zig**
