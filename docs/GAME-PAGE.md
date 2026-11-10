@@ -14,7 +14,7 @@ All characters depicted are adults.
 
 ## A rhythm game where you tap on each count beat to walk Prima deeper into trance.
 
-<p align="center"><a href="https://github.com/NTRanch/trancefall">GitHub</a> · <a href="https://github.com/NTRanch/trancefall/blob/main/LICENSE.md">License</a> · <a href="https://ntranch.itch.io">itch.io studio page</a></p>
+<p align="center"><a href="https://github.com/NTRanch/trancefall">GitHub</a> · <a href="https://github.com/NTRanch/trancefall/blob/main/LICENSE.md">License</a> · <a href="https://ntranch.itch.io">itch.io studio page</a> · <a href="https://github.com/NTRanch/trancefall/releases/tag/v1.0.0">Release</a></p>
 
 ![Trancefall header](../assets/brand/header.png)
 
